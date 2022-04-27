@@ -7,5 +7,5 @@ export function SetCurrentUrl(state, currentUrl){
 }
 
 export function SetPokemons(state, pokemons){
-    state.pokemons = pokemons
+    state.pokemons.push(...pokemons)
 }
