@@ -1,7 +1,15 @@
 <template>
     <div class="row justify-center">
-        <pokemon-card v-for="pokemon in pokemons" :key="`${pokemon.name}_${pokemon.id}`" class="col-4 q-ma-sm" :pokemon="{name:pokemon.name}" />
+
+        <pokemon-card
+        v-for="pokemon in pokemons"
+        :key="`${pokemon.name}_${pokemon.id}`"
+        class="col-4 q-ma-sm"
+        :pokemon="pokemon"
+        />
+
         <div ref="scrollWatcher" />
+
     </div>
 </template>
 
@@ -32,6 +40,10 @@ export default {
         next(){
             this.SetCurrentUrl(this.nextUrl)
             this.fetchPokemons()
+        },
+        selectPokemon(selectedPokemon){
+            console.log('en componente', selectedPokemon)
+            this.SetSelectedPokemon(selectedPokemon)
         }
     },
     components:{

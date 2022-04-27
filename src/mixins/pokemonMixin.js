@@ -13,13 +13,15 @@ import {
       ...mapMutations('pokemonStore', [
           'SetCurrentUrl',
           'SetNextUrl',
-          'SetPokemons'
+          'SetPokemons',
+          'SetSelectedPokemon'
       ]),
     },
     computed: {
       ...mapState('pokemonStore', [
         'pokemons',
         'nextUrl',
+        'selectedPokemon',
         'currentUrl'
       ])
     }
