@@ -14,7 +14,8 @@ import {
           'SetCurrentUrl',
           'SetNextUrl',
           'SetPokemons',
-          'SetSelectedPokemon'
+          'SetSelectedPokemon',
+          'SetError'
       ]),
     },
     computed: {
@@ -22,7 +23,8 @@ import {
         'pokemons',
         'nextUrl',
         'selectedPokemon',
-        'currentUrl'
+        'currentUrl',
+        'error'
       ])
     }
   };

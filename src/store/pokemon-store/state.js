@@ -3,6 +3,7 @@ export default function () {
     currentUrL: "",
     nextUrl: "",
     selectedPokemon: null,
-    pokemons: [],    
+    pokemons: [],
+    error: null,
   }
 }

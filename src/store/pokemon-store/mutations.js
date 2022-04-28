@@ -13,3 +13,7 @@ export function SetPokemons(state, pokemons){
 export function SetSelectedPokemon(state, selectedPokemon){
     state.selectedPokemon = selectedPokemon
 }
+
+export function SetError(state, error){
+    state.error = error
+}
