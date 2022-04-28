@@ -1,6 +1,6 @@
 # Pokedex (challenge-pokedex)
 
-The whole Task was implemented using Quasar SPA.
+SPA Responsive Pokedex using [PokeApi](https://pokeapi.co).
 
     ├── boot                  # axios api config
     ├── components            # Pokemon Card/List/Scoped , CustomCursor, AudioPlayer
@@ -10,6 +10,10 @@ The whole Task was implemented using Quasar SPA.
     ├── router                # routes to pages configuration
     ├── store                 # vuex modules
     └── App.vue
+
+## Demo
+
+See [Pokedex Demo](https://jfq-pokedex.herokuapp.com).
 
 ## Install the dependencies
 Clone main branch and install it locally using yarn
@@ -22,7 +26,6 @@ yarn
 yarn dev
 ```
 
-
 ### Build the app for production
 ```bash
 yarn build
@@ -30,3 +33,14 @@ yarn build
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://v1.quasar.dev/quasar-cli/quasar-conf-js).
+
+
+## Built with
+* [Vue 2](https://v2.vuejs.org/)
+* [Quasar v1](https://v1.quasar.dev/)
+* [Axios](https://github.com/axios/axios)
+
+## Other links
+
+* [PokeApi Docs](https://pokeapi.co/docs/v2)
+
