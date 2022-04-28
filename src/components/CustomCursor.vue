@@ -1,5 +1,6 @@
 <template>
   <img
+    v-show="$q.screen.gt.xs"
     :src="isOverCard ? pokeballOpenImg : pokeballImg"
     alt=""
     class="cursor absolute ease-out z-10 drop-shadow"
