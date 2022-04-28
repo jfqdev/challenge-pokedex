@@ -1,6 +1,6 @@
 <template>
     <q-card :class="`my-card-style bg-${pokemon.types[0].type.name} row`" style="cursor:pointer" :style="$q.screen.gt.xs ? 'height:250px' : 'height:400px'">
-        <q-img contain :src="focused ? pokemon.sprites.front_default : pokemon.sprites.back_default " :style="$q.screen.gt.xs ? 'height:150px' : 'height:200px'"></q-img>
+        <q-img contain :src="(!focused && $q.screen.gt.xs) ? pokemon.sprites.back_default : pokemon.sprites.front_default " :style="$q.screen.gt.xs ? 'height:150px' : 'height:200px'"></q-img>
         <q-space></q-space>
         <div class="col-6 text-center self-center text-bold " :class="$q.screen.gt.xs ? 'text-caption' : 'text-h6' " >Weight</div>
         <div class="col-6 text-center self-center text-bold" :class="$q.screen.gt.xs ? 'text-caption' : 'text-h6' ">Type</div>
