@@ -1,21 +1,31 @@
-# Pokedex (pokedex)
+# Pokedex (challenge-pokedex)
 
-Pokedex SPA
+The whole Task was implemented using Quasar SPA.
+
+    ├── boot                  # axios api config
+    ├── components            # Pokemon Card/List/Scoped , CustomCursor, AudioPlayer
+    ├── layouts               # main layout render - contains router-view (index as default)
+    ├── mixins                # provides vuex modules to components
+    ├── pages                 # index , Errors pages
+    ├── router                # routes to pages configuration
+    ├── store                 # vuex modules
+    └── App.vue
 
 ## Install the dependencies
+Clone main branch and install it locally using yarn
 ```bash
 yarn
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn dev
 ```
 
 
 ### Build the app for production
 ```bash
-quasar build
+yarn build
 ```
 
 ### Customize the configuration
