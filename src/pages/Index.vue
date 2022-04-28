@@ -8,7 +8,7 @@
             <q-space class="bg-main shadow-3"></q-space>
         </div>
         <pokemon-scoped  :ref="'pokemonScoped'"></pokemon-scoped>
-        <custom-cursor :ref="'customCursor'"></custom-cursor>
+        <custom-cursor v-if="$q.screen.gt.xs" :ref="'customCursor'"></custom-cursor>
     </q-page>   
 </template>
 
@@ -27,10 +27,14 @@ export default {
             this.$refs.pokemonScoped.showPokemon()
         },
         mouseOverCard(){
-            this.$refs.customCursor.mouseOverCard()
+            if(this.$q.screen.gt.xs){
+               this.$refs.customCursor.mouseOverCard()
+            }
         },
         mouseOutCard(){
-            this.$refs.customCursor.mouseOutCard()
+            if(this.$q.screen.gt.xs){
+                this.$refs.customCursor.mouseOutCard()
+            }
         }
     },
     components:{
