@@ -6,6 +6,9 @@
         :key="`${pokemon.name}_${pokemon.id}`"
         class="col-4 q-ma-sm"
         :pokemon="pokemon"
+        @mouseenter.native="mouseenters(pokemon)"
+        @mouseleave.native="mouseleaves(pokemon)"
+        :ref="`${pokemon.name}_${pokemon.id}`"
         />
 
         <div ref="scrollWatcher" />
@@ -27,9 +30,9 @@ export default {
         scrollTriggerEvent() {
             //Event
             const observer = new IntersectionObserver((entries) => {
+                //Callback
                 entries.forEach(entry => {
                     if(entry.intersectionRatio > 0 && this.nextUrl) {
-                        //Callback
                         this.next();
                     }
                 });
@@ -42,19 +45,24 @@ export default {
             this.fetchPokemons()
         },
         selectPokemon(selectedPokemon){
-            console.log('en componente', selectedPokemon)
             this.SetSelectedPokemon(selectedPokemon)
+        },
+        mouseenters(pokemon){
+            this.$refs[`${pokemon.name}_${pokemon.id}`][0].focused = true
+        },
+        mouseleaves(pokemon){
+            this.$refs[`${pokemon.name}_${pokemon.id}`][0].focused = false
         }
     },
     components:{
         PokemonCard
     },
-    async created(){
+    created(){
         this.SetCurrentUrl(baseURL())
-        await this.fetchPokemons()
+        this.fetchPokemons()
     },
     mounted() {
-      this.scrollTriggerEvent();
+        this.scrollTriggerEvent();
     }
 }
 </script>

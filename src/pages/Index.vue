@@ -2,7 +2,7 @@
     <q-page>
         <div class="row justify-center">
             <q-space class="bg-yellow"></q-space>
-                <div class="col-8 col-md-8 col-sm-10 col-xs-12 text-center bg-red ">
+                <div class="col-8 col-md-8 col-sm-10 col-xs-12 text-center">
                     <pokemon-list />
                 </div>
             <q-space class="bg-yellow"></q-space>
