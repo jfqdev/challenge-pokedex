@@ -6,6 +6,7 @@
         :key="`${pokemon.name}_${pokemon.id}`"
         class="col-4 q-ma-sm"
         :pokemon="pokemon"
+        @click.native="selectPokemon(pokemon)"
         @mouseenter.native="mouseenters(pokemon)"
         @mouseleave.native="mouseleaves(pokemon)"
         :ref="`${pokemon.name}_${pokemon.id}`"
@@ -44,14 +45,14 @@ export default {
             this.SetCurrentUrl(this.nextUrl)
             this.fetchPokemons()
         },
-        selectPokemon(selectedPokemon){
-            this.SetSelectedPokemon(selectedPokemon)
-        },
         mouseenters(pokemon){
             this.$refs[`${pokemon.name}_${pokemon.id}`][0].focused = true
         },
         mouseleaves(pokemon){
             this.$refs[`${pokemon.name}_${pokemon.id}`][0].focused = false
+        },
+        selectPokemon(pokemon){
+            this.SetSelectedPokemon(pokemon)
         }
     },
     components:{

@@ -1,5 +1,5 @@
 <template>
-    <q-card :class="`my-card-style bg-${pokemon.types[0].type.name} row`" @click="selectPokemon" style="height:250px; cursor:pointer;">
+    <q-card :class="`my-card-style bg-${pokemon.types[0].type.name} row`" style="height:250px; cursor:pointer;">
         <q-img contain :src="focused ? pokemon.sprites.front_default : pokemon.sprites.back_default " style="height:150px"></q-img>
         <q-space></q-space>
         <div class="col-6 text-center self-center h-7 text-bold">Weight</div>
@@ -26,11 +26,6 @@ export default {
     data(){
         return {
             focused: false
-        }
-    },
-    methods:{
-        selectPokemon(){
-            this.SetSelectedPokemon(this.pokemon)
         }
     }
 }
