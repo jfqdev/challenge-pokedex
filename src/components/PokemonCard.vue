@@ -1,11 +1,11 @@
 <template>
-    <q-card :class="`my-card-style bg-${pokemon.types[0].type.name} row`" style="height:250px; cursor:pointer;">
-        <q-img contain :src="focused ? pokemon.sprites.front_default : pokemon.sprites.back_default " style="height:150px"></q-img>
+    <q-card :class="`my-card-style bg-${pokemon.types[0].type.name} row`" style="cursor:pointer" :style="$q.screen.gt.xs ? 'height:250px' : 'height:400px'">
+        <q-img contain :src="focused ? pokemon.sprites.front_default : pokemon.sprites.back_default " :style="$q.screen.gt.xs ? 'height:150px' : 'height:200px'"></q-img>
         <q-space></q-space>
-        <div class="col-6 text-center self-center h-7 text-bold">Weight</div>
-        <div class="col-6 text-center self-center h-7 text-bold">Type</div>
-        <div class="col-6 text-center self-center h-7 text-caption">{{pokemon.weight}} lb</div>
-        <div class="col-6 text-center self-center h-7 text-caption">
+        <div class="col-6 text-center self-center text-bold " :class="$q.screen.gt.xs ? 'text-caption' : 'text-h6' " >Weight</div>
+        <div class="col-6 text-center self-center text-bold" :class="$q.screen.gt.xs ? 'text-caption' : 'text-h6' ">Type</div>
+        <div class="col-6 text-center self-center" :class="$q.screen.gt.xs ? 'text-caption' : 'text-h6' ">{{pokemon.weight}} lb</div>
+        <div class="col-6 text-center self-center " :class="$q.screen.gt.xs ? 'text-caption' : 'text-h6' ">
             <div v-for="(type,index) in pokemon.types" :key="`${type}_${index}`">
             {{type.type.name}}
             </div>
