@@ -3,8 +3,8 @@
 
         <pokemon-card
         v-for="pokemon in pokemons"
-        :key="`${pokemon.name}_${pokemon.id}`"
-        class="col-4 q-ma-sm"
+        :key="pokemon.id"
+        class="col-4 col-sm-4 col-xs-9 q-ma-sm"
         :pokemon="pokemon"
         @click.native="selectPokemon(pokemon)"
         @mouseenter.native="mouseenters(pokemon)"
@@ -12,7 +12,7 @@
         :ref="`${pokemon.name}_${pokemon.id}`"
         />
 
-        <div ref="scrollWatcher" />
+        <div ref="scrollWatcher" ></div>
 
     </div>
 </template>
@@ -34,6 +34,7 @@ export default {
                 //Callback
                 entries.forEach(entry => {
                     if(entry.intersectionRatio > 0 && this.nextUrl) {
+                        this.$q.loading.show()
                         this.next();
                     }
                 });
@@ -41,18 +42,22 @@ export default {
             //Observe intersection with scrollWatcher el, always at page bottom
             observer.observe(this.$refs.scrollWatcher);
         },
-        next(){
+        async next(){
             this.SetCurrentUrl(this.nextUrl)
-            this.fetchPokemons()
+            await this.fetchPokemons()
+            this.$q.loading.hide()
         },
         mouseenters(pokemon){
+            this.$emit('mouseOverCard')
             this.$refs[`${pokemon.name}_${pokemon.id}`][0].focused = true
         },
         mouseleaves(pokemon){
+            this.$emit('mouseOutCard')
             this.$refs[`${pokemon.name}_${pokemon.id}`][0].focused = false
         },
         selectPokemon(pokemon){
             this.SetSelectedPokemon(pokemon)
+            this.$emit('selectPokemon')
         }
     },
     components:{
