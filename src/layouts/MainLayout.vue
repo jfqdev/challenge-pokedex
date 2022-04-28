@@ -3,12 +3,12 @@
     <q-header elevated>
       <q-toolbar >
         <q-avatar rounded>
-          <q-img  contain src="../assets/images/pokedex.svg" />
+            <q-img contain src="../assets/images/pokedex.svg"/> 
         </q-avatar>
         <q-toolbar-title>
           Pokedex App
         </q-toolbar-title>
-        <div>Jemersoft Challenge</div>
+        <audio-player></audio-player>
       </q-toolbar>
     </q-header>
 
@@ -19,7 +19,15 @@
 </template>
 
 <script>
+
+import AudioPlayer from 'src/components/audioPlayer.vue'
+
 export default {
-  name: 'MainLayout'
+  name: 'MainLayout',
+  components:{
+    AudioPlayer
+  }
+
+
 }
 </script>
